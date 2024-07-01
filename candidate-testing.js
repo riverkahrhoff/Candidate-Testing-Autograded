@@ -25,8 +25,8 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 for (let i = 0; i < questions.length; i++) {
   candidateAnswer = (input.question(questions[i]));
-  candidateAnswers.push(candidateAnswer.toUpperCase());
-  if (candidateAnswers[i] === correctAnswers[i].toUpperCase()) {
+  candidateAnswers.push(candidateAnswer);
+  if (candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
     console.log("CORRECT");
   } else {
     console.log(`INCORRECT\nCorrect Answer: ${correctAnswers[i]}`)
@@ -56,11 +56,11 @@ function gradeQuiz(candidateAnswers) {
   let totalNumQuestions = correctAnswers.length;
     
   for (let i = 0; i < correctAnswers.length; i++) {
-    if (correctAnswers[i].toUpperCase() === candidateAnswers[i]) {
+    if (correctAnswers[i].toUpperCase() === candidateAnswers[i].toUpperCase()) {
        numCorrectAnswers += 1    
     }
   }
-   grade = numCorrectAnswers/totalNumQuestions * 100
+   grade = (numCorrectAnswers/totalNumQuestions) * 100
   
     console.log(`
     
